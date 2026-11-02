@@ -1,6 +1,6 @@
-# Apex College Management Portal (SE Project MVP)
+# Apex College Management Portal (Project MVP)
 
-A full-stack, responsive, and robust **College Management Portal** built for our Software Engineering college project. The portal features role-based access control (Student, Faculty, Administrator), academic record administration, attendance tracking, examination grading, real-time reports with CSV export, and an ACID-compliant **Course Registration Module** featuring transactional row-locking concurrency control.
+A full-stack, responsive, and robust **College Management Portal** built for our Database Systems and Software Engineering college project. The portal features role-based access control (Student, Faculty, Administrator), academic record administration, attendance tracking, examination grading, real-time reports with CSV export, and an ACID-compliant **Course Registration Module** featuring transactional row-locking concurrency control.
 
 ---
 
