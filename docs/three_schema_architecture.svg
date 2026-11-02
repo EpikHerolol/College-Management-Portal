@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1150" width="1600" height="1150">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+      <feOffset dx="2" dy="4" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="extGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#eff6ff"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </linearGradient>
+
+    <linearGradient id="concGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#d1fae5"/>
+    </linearGradient>
+
+    <linearGradient id="intGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#faf5ff"/>
+      <stop offset="100%" stop-color="#f3e8ff"/>
+    </linearGradient>
+
+    <marker id="arrowUp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 10 L 5 0 L 10 10 z" fill="#0284c7"/>
+    </marker>
+    <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 0 L 5 10 z" fill="#0284c7"/>
+    </marker>
+
+    <marker id="arrowUpPurp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 10 L 5 0 L 10 10 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowDownPurp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 0 L 5 10 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1150" fill="#ffffff"/>
+
+  <!-- Title Header -->
+  <g id="DiagramTitle">
+    <rect x="50" y="25" width="1500" height="65" rx="8" fill="url(#headerGrad)"/>
+    <text x="800" y="58" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="24" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">
+      ANSI/SPARC THREE-SCHEMA DATABASE ARCHITECTURE
+    </text>
+    <text x="800" y="80" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#94a3b8" text-anchor="middle">
+      Apex College Management Portal - External Views, Conceptual Relational Model &amp; Physical Storage Engine
+    </text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- LEVEL 1: EXTERNAL SCHEMA (VIEWS)                                     -->
+  <!-- ===================================================================== -->
+  <g id="ExternalLevel" filter="url(#shadow)">
+    <!-- Level Container -->
+    <rect x="50" y="115" width="1500" height="235" rx="12" fill="#f8fafc" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="50" y="115" width="1500" height="38" rx="12" fill="#2563eb"/>
+    <rect x="50" y="135" width="1500" height="18" fill="#2563eb"/>
+    <text x="800" y="140" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      EXTERNAL LEVEL: ROLE-SPECIFIC USER VIEWS (Subschemas)
+    </text>
+
+    <!-- View 1: Student View -->
+    <g transform="translate(85, 170)">
+      <rect width="420" height="160" rx="8" fill="url(#extGrad)" stroke="#60a5fa" stroke-width="1.8"/>
+      <rect width="420" height="32" rx="8" fill="#3b82f6"/>
+      <rect y="16" width="420" height="16" fill="#3b82f6"/>
+      <text x="210" y="23" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        EXTERNAL VIEW 1: STUDENT
+      </text>
+      <text x="20" y="58" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Browse Available Courses &amp; Live Capacity</text>
+      <text x="20" y="82" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Atomic Course Registration &amp; Safe Drop</text>
+      <text x="20" y="106" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• View Cumulative Attendance Percentage</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Access Examination Transcript &amp; Credits</text>
+      <text x="20" y="150" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-style="italic" fill="#3b82f6">(Restricted: Can only read/write own records)</text>
+    </g>
+
+    <!-- View 2: Faculty View -->
+    <g transform="translate(590, 170)">
+      <rect width="420" height="160" rx="8" fill="url(#extGrad)" stroke="#60a5fa" stroke-width="1.8"/>
+      <rect width="420" height="32" rx="8" fill="#3b82f6"/>
+      <rect y="16" width="420" height="16" fill="#3b82f6"/>
+      <text x="210" y="23" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        EXTERNAL VIEW 2: FACULTY
+      </text>
+      <text x="20" y="58" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• View Assigned Class Rosters &amp; Students</text>
+      <text x="20" y="82" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Record Daily Session Attendance (P / A)</text>
+      <text x="20" y="106" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Enter &amp; Update Examination Numerical Marks</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Review Attendance Defaulter Alerts (&lt; 75%)</text>
+      <text x="20" y="150" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-style="italic" fill="#3b82f6">(Restricted: Scoped to assigned course sections)</text>
+    </g>
+
+    <!-- View 3: Administrator View -->
+    <g transform="translate(1095, 170)">
+      <rect width="420" height="160" rx="8" fill="url(#extGrad)" stroke="#60a5fa" stroke-width="1.8"/>
+      <rect width="420" height="32" rx="8" fill="#3b82f6"/>
+      <rect y="16" width="420" height="16" fill="#3b82f6"/>
+      <text x="210" y="23" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        EXTERNAL VIEW 3: ADMINISTRATOR
+      </text>
+      <text x="20" y="58" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Manage Academic Departments &amp; Curricula</text>
+      <text x="20" y="82" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Administer Student &amp; Faculty User Directories</text>
+      <text x="20" y="106" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Configure Course Capacities &amp; Semester Slots</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#1e3a8a">• Generate University Analytics &amp; CSV Exports</text>
+      <text x="20" y="150" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-style="italic" fill="#3b82f6">(Full Access: Global institutional governance)</text>
+    </g>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- MAPPING 1: EXTERNAL / CONCEPTUAL (LOGICAL DATA INDEPENDENCE)         -->
+  <!-- ===================================================================== -->
+  <g id="Mapping1">
+    <!-- Connecting Arrows -->
+    <line x1="295" y1="355" x2="295" y2="435" stroke="#0284c7" stroke-width="3" stroke-dasharray="6,4"/>
+    <line x1="800" y1="355" x2="800" y2="435" stroke="#0284c7" stroke-width="3" stroke-dasharray="6,4"/>
+    <line x1="1305" y1="355" x2="1305" y2="435" stroke="#0284c7" stroke-width="3" stroke-dasharray="6,4"/>
+
+    <!-- Central Badge -->
+    <rect x="520" y="375" width="560" height="42" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="1.8"/>
+    <text x="800" y="396" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13.5" font-weight="bold" fill="#0369a1" text-anchor="middle">
+      EXTERNAL / CONCEPTUAL MAPPING
+    </text>
+    <text x="800" y="411" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11.5" font-weight="bold" fill="#0284c7" text-anchor="middle">
+      Guarantees Logical Data Independence (Schema alterations do not break role views)
+    </text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- LEVEL 2: CONCEPTUAL SCHEMA                                            -->
+  <!-- ===================================================================== -->
+  <g id="ConceptualLevel" filter="url(#shadow)">
+    <rect x="50" y="445" width="1500" height="275" rx="12" fill="#f8fafc" stroke="#10b981" stroke-width="2"/>
+    <rect x="50" y="445" width="1500" height="38" rx="12" fill="#059669"/>
+    <rect x="50" y="465" width="1500" height="18" fill="#059669"/>
+    <text x="800" y="470" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      CONCEPTUAL LEVEL: LOGICAL COMMUNITY SCHEMA (3NF / BCNF Normalized)
+    </text>
+
+    <!-- Sub-boxes for Conceptual Elements -->
+    <!-- Normalized Entities -->
+    <g transform="translate(85, 500)">
+      <rect width="660" height="200" rx="8" fill="url(#concGrad)" stroke="#34d399" stroke-width="1.5"/>
+      <text x="330" y="28" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#065f46" text-anchor="middle">
+        NORMALIZED RELATIONAL TABLES &amp; DOMAIN ENTITIES
+      </text>
+      <line x1="20" y1="38" x2="640" y2="38" stroke="#a7f3d0" stroke-width="1.5"/>
+      <text x="30" y="65" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">departments</tspan> (id, code, name, description)</text>
+      <text x="30" y="90" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">users</tspan> (id, email, password_hash, role, status)</text>
+      <text x="30" y="115" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">faculty</tspan> (id, user_id*, faculty_id, name, department_id*)</text>
+      <text x="30" y="140" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">students</tspan> (id, user_id*, student_id, name, semester, department_id*)</text>
+      <text x="30" y="165" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">courses</tspan> (id, course_code, title, credits, capacity, faculty_id*)</text>
+      <text x="30" y="190" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">enrollments, attendance, results</tspan> (Associative M:N tables)</text>
+    </g>
+
+    <!-- Constraints and Routines -->
+    <g transform="translate(855, 500)">
+      <rect width="660" height="200" rx="8" fill="url(#concGrad)" stroke="#34d399" stroke-width="1.5"/>
+      <text x="330" y="28" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14" font-weight="bold" fill="#065f46" text-anchor="middle">
+        INTEGRITY RULES, STORED ROUTINES &amp; VIRTUAL VIEWS
+      </text>
+      <line x1="20" y1="38" x2="640" y2="38" stroke="#a7f3d0" stroke-width="1.5"/>
+      <text x="30" y="65" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Integrity Constraints:</tspan> PK, FK (CASCADE/RESTRICT), UNIQUE, CHECK</text>
+      <text x="30" y="90" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Stored Procedure:</tspan> sp_EnrollStudent (Row-Locking Concurrency)</text>
+      <text x="30" y="115" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Stored Function:</tspan> fn_CalculateGrade (Automated Grading Scale)</text>
+      <text x="30" y="140" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Triggers:</tspan> trg_before_insert_result (Automatic score validation)</text>
+      <text x="30" y="165" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Cursor Routine:</tspan> sp_IdentifyAttendanceDefaulters (&lt; 75% Audit)</text>
+      <text x="30" y="190" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" fill="#064e3b">• <tspan font-weight="bold">Database View:</tspan> v_course_enrollment_summary</text>
+    </g>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- MAPPING 2: CONCEPTUAL / INTERNAL (PHYSICAL DATA INDEPENDENCE)         -->
+  <!-- ===================================================================== -->
+  <g id="Mapping2">
+    <!-- Connecting Arrows -->
+    <line x1="415" y1="725" x2="415" y2="805" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6,4"/>
+    <line x1="800" y1="725" x2="800" y2="805" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6,4"/>
+    <line x1="1185" y1="725" x2="1185" y2="805" stroke="#7c3aed" stroke-width="3" stroke-dasharray="6,4"/>
+
+    <!-- Central Badge -->
+    <rect x="520" y="745" width="560" height="42" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
+    <text x="800" y="766" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13.5" font-weight="bold" fill="#6d28d9" text-anchor="middle">
+      CONCEPTUAL / INTERNAL MAPPING
+    </text>
+    <text x="800" y="781" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11.5" font-weight="bold" fill="#7c3aed" text-anchor="middle">
+      Guarantees Physical Data Independence (Indexing/storage changes do not alter logical tables)
+    </text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- LEVEL 3: INTERNAL SCHEMA (PHYSICAL STORAGE)                          -->
+  <!-- ===================================================================== -->
+  <g id="InternalLevel" filter="url(#shadow)">
+    <rect x="50" y="815" width="1500" height="280" rx="12" fill="#f8fafc" stroke="#8b5cf6" stroke-width="2"/>
+    <rect x="50" y="815" width="1500" height="38" rx="12" fill="#7c3aed"/>
+    <rect x="50" y="835" width="1500" height="18" fill="#7c3aed"/>
+    <text x="800" y="840" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="16" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      INTERNAL LEVEL: PHYSICAL STORAGE STRUCTURES (MySQL 8.4 InnoDB Engine)
+    </text>
+
+    <!-- Storage Component 1: Tablespaces & Pages -->
+    <g transform="translate(85, 870)">
+      <rect width="420" height="205" rx="8" fill="url(#intGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
+      <rect width="420" height="30" rx="8" fill="#8b5cf6"/>
+      <rect y="15" width="420" height="15" fill="#8b5cf6"/>
+      <text x="210" y="21" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        TABLESPACES &amp; DATA PAGES
+      </text>
+      <text x="20" y="55" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• File-per-table Tablespaces (.ibd files)</text>
+      <text x="20" y="80" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• 16 KB Standard InnoDB Data Pages</text>
+      <text x="20" y="105" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Clustered Index Leaf-Node Rows</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Extent Allocation (64 pages = 1 MB)</text>
+      <text x="20" y="155" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Row Format: DYNAMIC (utf8mb4)</text>
+      <text x="20" y="180" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Free Space Management &amp; Defrag</text>
+    </g>
+
+    <!-- Storage Component 2: B+ Tree Index Structures -->
+    <g transform="translate(590, 870)">
+      <rect width="420" height="205" rx="8" fill="url(#intGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
+      <rect width="420" height="30" rx="8" fill="#8b5cf6"/>
+      <rect y="15" width="420" height="15" fill="#8b5cf6"/>
+      <text x="210" y="21" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        B+ TREE INDEX STRUCTURES
+      </text>
+      <text x="20" y="55" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Primary Clustered B+ Tree on 'id'</text>
+      <text x="20" y="80" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Secondary B-Tree: idx_courses_dept</text>
+      <text x="20" y="105" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Composite Index: uk_student_course</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Secondary Index: idx_students_semester</text>
+      <text x="20" y="155" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Adaptive Hash Index Optimization</text>
+      <text x="20" y="180" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Fast Logarithmic O(log N) Traversals</text>
+    </g>
+
+    <!-- Storage Component 3: Memory & Write-Ahead Logs -->
+    <g transform="translate(1095, 870)">
+      <rect width="420" height="205" rx="8" fill="url(#intGrad)" stroke="#c4b5fd" stroke-width="1.5"/>
+      <rect width="420" height="30" rx="8" fill="#8b5cf6"/>
+      <rect y="15" width="420" height="15" fill="#8b5cf6"/>
+      <text x="210" y="21" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">
+        BUFFER POOL &amp; LOGGING (ACID)
+      </text>
+      <text x="20" y="55" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• InnoDB Buffer Pool (In-memory page cache)</text>
+      <text x="20" y="80" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Write-Ahead Logging (WAL Protocol)</text>
+      <text x="20" y="105" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Redo Log (ib_logfile0: Roll-Forward)</text>
+      <text x="20" y="130" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Undo Tablespace (Roll-Backward &amp; MVCC)</text>
+      <text x="20" y="155" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Doublewrite Buffer (Torn page protection)</text>
+      <text x="20" y="180" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#4c1d95">• Row-Level Lock Manager (Record Locks)</text>
+    </g>
+  </g>
+</svg>

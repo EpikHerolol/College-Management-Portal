@@ -1,0 +1,37 @@
+{
+  "name": "college-management-portal",
+  "version": "1.0.0",
+  "description": "College Management Portal - Full-stack SE Project with React, Express, and MySQL",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "npm run install:all",
+    "install:all": "npm install --prefix backend && npm install --prefix frontend",
+    "db:start": "bash scripts/start-mysql.sh",
+    "db:stop": "bash scripts/stop-mysql.sh",
+    "db:init": "node scripts/init-db.js",
+    "db:seed": "node scripts/seed-db.js",
+    "db:reset": "node scripts/reset-db.js",
+    "db:queries": "node scripts/run-queries.js",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "predev": "npm run db:start",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "prestart": "npm run db:start",
+    "start": "npm run dev",
+    "pretest": "npm run db:start",
+    "test:backend": "npm run test --prefix backend",
+    "test:frontend": "npm run test --prefix frontend",
+    "test": "npm run test:backend && npm run test:frontend",
+    "vitest": "npm test",
+    "test:watch": "concurrently \"npm run test --prefix backend -- --watch\" \"npm run test --prefix frontend -- --watch\""
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.12.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

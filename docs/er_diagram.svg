@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1700 1200" width="1700" height="1200">
+  <defs>
+    <filter id="erShadow" x="-5%" y="-5%" width="112%" height="112%" filterUnits="userSpaceOnUse">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="3" result="offsetblur"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.10"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <linearGradient id="entGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f0f9ff"/>
+    </linearGradient>
+
+    <linearGradient id="relGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="100%" stop-color="#fef3c7"/>
+    </linearGradient>
+
+    <linearGradient id="assocGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f5f3ff"/>
+    </linearGradient>
+
+    <linearGradient id="attrGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f8fafc"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1700" height="1200" fill="#ffffff"/>
+
+  <!-- Diagram Title Header -->
+  <g id="Header">
+    <rect x="50" y="20" width="1600" height="60" rx="8" fill="#1e293b"/>
+    <text x="850" y="52" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="23" font-weight="bold" fill="#ffffff" text-anchor="middle">
+      ENTITY-RELATIONSHIP (ER) DIAGRAM: APEX COLLEGE MANAGEMENT PORTAL
+    </text>
+    <text x="850" y="70" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12.5" fill="#94a3b8" text-anchor="middle">
+      Conceptual Database Schema - Strong Entities, Associative Entities, Attributes &amp; Cardinality Constraints
+    </text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- RELATIONSHIP CONNECTING LINES                                         -->
+  <!-- ===================================================================== -->
+  <g id="Lines" stroke="#334155" stroke-width="1.8">
+    <!-- DEPARTMENTS (350, 200) to Offers (550, 200) to COURSES (750, 200) -->
+    <line x1="390" y1="200" x2="490" y2="200"/>
+    <line x1="570" y1="200" x2="670" y2="200"/>
+
+    <!-- DEPARTMENTS (350, 200) to Enrolls (350, 320) to STUDENTS (350, 440) -->
+    <line x1="350" y1="240" x2="350" y2="280"/>
+    <line x1="350" y1="360" x2="350" y2="400"/>
+
+    <!-- DEPARTMENTS (350, 200) to Employs (190, 200) to FACULTY (90, 320) -->
+    <line x1="270" y1="200" x2="200" y2="200"/>
+    <line x1="160" y1="230" x2="130" y2="300"/>
+
+    <!-- USERS (1350, 320) to Authenticates_S (850, 440) & Authenticates_F (1350, 440) -->
+    <line x1="1350" y1="350" x2="1350" y2="440"/>
+    <line x1="1350" y1="290" x2="350" y2="130"/>
+
+    <!-- FACULTY (130, 360) to Instructs (450, 360) to COURSES (750, 240) -->
+    <line x1="190" y1="360" x2="400" y2="360"/>
+    <line x1="480" y1="360" x2="710" y2="240"/>
+
+    <!-- STUDENTS (350, 480) & COURSES (750, 240) to ENROLLMENTS (550, 600) -->
+    <line x1="430" y1="460" x2="520" y2="580"/>
+    <line x1="750" y1="240" x2="580" y2="580"/>
+
+    <!-- STUDENTS & COURSES & FACULTY to ATTENDANCE (900, 600) -->
+    <line x1="430" y1="480" x2="840" y2="600"/>
+    <line x1="770" y1="240" x2="900" y2="580"/>
+    <line x1="190" y1="390" x2="840" y2="620"/>
+
+    <!-- STUDENTS & COURSES & FACULTY to RESULTS (1250, 600) -->
+    <line x1="430" y1="500" x2="1190" y2="610"/>
+    <line x1="820" y1="240" x2="1220" y2="580"/>
+    <line x1="190" y1="400" x2="1190" y2="630"/>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- STRONG ENTITIES (Rectangles)                                          -->
+  <!-- ===================================================================== -->
+
+  <!-- 1. DEPARTMENTS -->
+  <g id="Ent_Dept" filter="url(#erShadow)">
+    <rect x="270" y="160" width="160" height="80" rx="4" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="350" y="195" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">DEPARTMENTS</text>
+    <text x="350" y="215" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#475569" text-anchor="middle">Academic Divisions</text>
+  </g>
+
+  <!-- 2. COURSES -->
+  <g id="Ent_Courses" filter="url(#erShadow)">
+    <rect x="670" y="160" width="160" height="80" rx="4" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="750" y="195" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">COURSES</text>
+    <text x="750" y="215" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#475569" text-anchor="middle">Curriculum Modules</text>
+  </g>
+
+  <!-- 3. STUDENTS -->
+  <g id="Ent_Students" filter="url(#erShadow)">
+    <rect x="270" y="420" width="160" height="80" rx="4" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="350" y="455" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">STUDENTS</text>
+    <text x="350" y="475" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#475569" text-anchor="middle">Matriculated Candidates</text>
+  </g>
+
+  <!-- 4. FACULTY -->
+  <g id="Ent_Faculty" filter="url(#erShadow)">
+    <rect x="50" y="320" width="150" height="80" rx="4" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="125" y="355" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">FACULTY</text>
+    <text x="125" y="375" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#475569" text-anchor="middle">Instructors</text>
+  </g>
+
+  <!-- 5. USERS -->
+  <g id="Ent_Users" filter="url(#erShadow)">
+    <rect x="1270" y="270" width="160" height="80" rx="4" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2.5"/>
+    <text x="1350" y="305" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="15" font-weight="bold" fill="#0f172a" text-anchor="middle">USERS</text>
+    <text x="1350" y="325" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#475569" text-anchor="middle">RBAC Credentials</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- ASSOCIATIVE ENTITIES (Double Rectangles)                              -->
+  <!-- ===================================================================== -->
+
+  <!-- 6. ENROLLMENTS -->
+  <g id="Assoc_Enroll" filter="url(#erShadow)">
+    <rect x="470" y="580" width="160" height="80" rx="4" fill="url(#assocGrad)" stroke="#7c3aed" stroke-width="2.5"/>
+    <rect x="476" y="586" width="148" height="68" rx="2" fill="none" stroke="#7c3aed" stroke-width="1.2"/>
+    <text x="550" y="618" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14.5" font-weight="bold" fill="#4c1d95" text-anchor="middle">ENROLLMENTS</text>
+    <text x="550" y="638" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#6d28d9" text-anchor="middle">Student Registration</text>
+  </g>
+
+  <!-- 7. ATTENDANCE -->
+  <g id="Assoc_Att" filter="url(#erShadow)">
+    <rect x="820" y="580" width="160" height="80" rx="4" fill="url(#assocGrad)" stroke="#7c3aed" stroke-width="2.5"/>
+    <rect x="826" y="586" width="148" height="68" rx="2" fill="none" stroke="#7c3aed" stroke-width="1.2"/>
+    <text x="900" y="618" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14.5" font-weight="bold" fill="#4c1d95" text-anchor="middle">ATTENDANCE</text>
+    <text x="900" y="638" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#6d28d9" text-anchor="middle">Session Tracking</text>
+  </g>
+
+  <!-- 8. RESULTS -->
+  <g id="Assoc_Res" filter="url(#erShadow)">
+    <rect x="1170" y="580" width="160" height="80" rx="4" fill="url(#assocGrad)" stroke="#7c3aed" stroke-width="2.5"/>
+    <rect x="1176" y="586" width="148" height="68" rx="2" fill="none" stroke="#7c3aed" stroke-width="1.2"/>
+    <text x="1250" y="618" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="14.5" font-weight="bold" fill="#4c1d95" text-anchor="middle">RESULTS</text>
+    <text x="1250" y="638" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#6d28d9" text-anchor="middle">Grade Assessment</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- RELATIONSHIP DIAMONDS                                                 -->
+  <!-- ===================================================================== -->
+
+  <!-- Offers (Dept 1 -> N Courses) -->
+  <g id="Rel_Offers" filter="url(#erShadow)">
+    <polygon points="530,170 570,200 530,230 490,200" fill="url(#relGrad)" stroke="#d97706" stroke-width="2"/>
+    <text x="530" y="204" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">Offers</text>
+    <text x="440" y="190" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">1</text>
+    <text x="640" y="190" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">N</text>
+  </g>
+
+  <!-- Enrolls (Dept 1 -> N Students) -->
+  <g id="Rel_Enrolls" filter="url(#erShadow)">
+    <polygon points="350,290 390,320 350,350 310,320" fill="url(#relGrad)" stroke="#d97706" stroke-width="2"/>
+    <text x="350" y="324" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11.5" font-weight="bold" fill="#78350f" text-anchor="middle">Enrolls</text>
+    <text x="365" y="260" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">1</text>
+    <text x="365" y="380" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">N</text>
+  </g>
+
+  <!-- Employs (Dept 1 -> N Faculty) -->
+  <g id="Rel_Employs" filter="url(#erShadow)">
+    <polygon points="180,180 220,200 180,220 140,200" fill="url(#relGrad)" stroke="#d97706" stroke-width="2"/>
+    <text x="180" y="204" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">Employs</text>
+    <text x="240" y="190" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">1</text>
+    <text x="135" y="270" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">N</text>
+  </g>
+
+  <!-- Instructs (Faculty 1 -> N Courses) -->
+  <g id="Rel_Instructs" filter="url(#erShadow)">
+    <polygon points="440,330 480,360 440,390 400,360" fill="url(#relGrad)" stroke="#d97706" stroke-width="2"/>
+    <text x="440" y="364" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-weight="bold" fill="#78350f" text-anchor="middle">Instructs</text>
+    <text x="230" y="350" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">1</text>
+    <text x="670" y="260" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#b45309">N</text>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- ATTRIBUTES (Ovals)                                                    -->
+  <!-- ===================================================================== -->
+
+  <!-- DEPARTMENTS Attributes -->
+  <g transform="translate(230, 95)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="36" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-weight="bold" text-decoration="underline" fill="#0f172a" text-anchor="middle">id (PK)</text>
+    <line x1="40" y1="36" x2="60" y2="65" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(320, 95)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="36" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">code (UK)</text>
+    <line x1="40" y1="36" x2="35" y2="65" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(410, 95)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="36" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">name</text>
+    <line x1="40" y1="36" x2="10" y2="65" stroke="#475569" stroke-width="1.2"/>
+  </g>
+
+  <!-- COURSES Attributes -->
+  <g transform="translate(680, 95)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="36" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-weight="bold" text-decoration="underline" fill="#0f172a" text-anchor="middle">id (PK)</text>
+    <line x1="40" y1="36" x2="50" y2="65" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(770, 95)" filter="url(#erShadow)">
+    <ellipse cx="45" cy="20" rx="42" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="45" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">course_code</text>
+    <line x1="45" y1="36" x2="25" y2="65" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(860, 130)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="38" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">credits</text>
+    <line x1="0" y1="20" x2="-30" y2="35" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(860, 180)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="38" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">capacity</text>
+    <line x1="0" y1="20" x2="-30" y2="10" stroke="#475569" stroke-width="1.2"/>
+  </g>
+
+  <!-- STUDENTS Attributes -->
+  <g transform="translate(140, 440)" filter="url(#erShadow)">
+    <ellipse cx="45" cy="20" rx="42" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="45" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-weight="bold" text-decoration="underline" fill="#0f172a" text-anchor="middle">student_id</text>
+    <line x1="87" y1="20" x2="130" y2="20" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(140, 490)" filter="url(#erShadow)">
+    <ellipse cx="45" cy="20" rx="42" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="45" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">semester</text>
+    <line x1="87" y1="20" x2="130" y2="0" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(250, 520)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="38" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">email (UK)</text>
+    <line x1="40" y1="0" x2="50" y2="-20" stroke="#475569" stroke-width="1.2"/>
+  </g>
+
+  <!-- RESULTS Attributes (Including Derived 'grade') -->
+  <g transform="translate(1190, 680)" filter="url(#erShadow)">
+    <ellipse cx="40" cy="20" rx="36" ry="16" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#0f172a" text-anchor="middle">marks</text>
+    <line x1="40" y1="0" x2="40" y2="-20" stroke="#475569" stroke-width="1.2"/>
+  </g>
+  <g transform="translate(1275, 680)" filter="url(#erShadow)">
+    <!-- Derived Attribute: Dashed Border -->
+    <ellipse cx="40" cy="20" rx="38" ry="16" fill="url(#attrGrad)" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="40" y="24" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" font-style="italic" fill="#78350f" text-anchor="middle">grade (der)</text>
+    <line x1="40" y1="0" x2="0" y2="-20" stroke="#475569" stroke-width="1.2"/>
+  </g>
+
+  <!-- ===================================================================== -->
+  <!-- LEGEND BOX                                                            -->
+  <!-- ===================================================================== -->
+  <g id="Legend" filter="url(#erShadow)">
+    <rect x="50" y="1030" width="1600" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="70" y="1055" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="13" font-weight="bold" fill="#0f172a">Notation Legend &amp; ER Semantics:</text>
+    
+    <!-- Item 1 -->
+    <rect x="70" y="1070" width="40" height="25" rx="3" fill="url(#entGrad)" stroke="#0284c7" stroke-width="2"/>
+    <text x="120" y="1087" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#334155">Strong Entity</text>
+
+    <!-- Item 2 -->
+    <rect x="230" y="1070" width="40" height="25" rx="3" fill="url(#assocGrad)" stroke="#7c3aed" stroke-width="2"/>
+    <rect x="233" y="1073" width="34" height="19" rx="1" fill="none" stroke="#7c3aed" stroke-width="1"/>
+    <text x="280" y="1087" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#334155">Associative Entity (M:N Resolver)</text>
+
+    <!-- Item 3 -->
+    <polygon points="500,1070 520,1082 500,1095 480,1082" fill="url(#relGrad)" stroke="#d97706" stroke-width="1.8"/>
+    <text x="530" y="1087" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#334155">Relationship</text>
+
+    <!-- Item 4 -->
+    <ellipse cx="640" cy="1082" rx="20" ry="12" fill="url(#attrGrad)" stroke="#475569" stroke-width="1.4"/>
+    <text x="640" y="1085" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="9" text-decoration="underline" text-anchor="middle">PK</text>
+    <text x="670" y="1087" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#334155">Primary Key Attribute</text>
+
+    <!-- Item 5 -->
+    <ellipse cx="830" cy="1082" rx="20" ry="12" fill="url(#attrGrad)" stroke="#d97706" stroke-width="1.4" stroke-dasharray="3,2"/>
+    <text x="860" y="1087" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="12" fill="#334155">Derived Attribute (Trigger / Function)</text>
+
+    <!-- Subnote -->
+    <text x="70" y="1122" font-family="Liberation Sans, DejaVu Sans, Arial" font-size="11" fill="#64748b" font-style="italic">
+      * Cardinalities: 1 = One, N = Many. Total participation is enforced by NOT NULL foreign keys across student enrollment, attendance sessions, and examination results.
+    </text>
+  </g>
+</svg>
