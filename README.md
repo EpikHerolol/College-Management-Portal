@@ -259,6 +259,6 @@ npm run test:frontend
 
 ## 11. Authors & Academic Acknowledgement
 
-Built for the Software Engineering College Project Course.  
+Built for Database Systems and Software Engineering Project Course.
 Stack: React (Vite) + Express.js + MySQL 8.4 + Vitest.
 
